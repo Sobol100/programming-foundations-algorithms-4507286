@@ -3,10 +3,21 @@
 # using Euclid's algorithm
 
 
-def gcd(a, b):
-    pass
+def recursive_gcd(a, b):
+    if b == 0:
+        return a
+    return recursive_gcd(b, a % b)
 
+def gcd (a,b):
+    while b != 0:
+        t = a
+        a = b
+        b = t % b
+    return a
 
 # try out the function with a few examples
 print(gcd(60, 96))  # should be 12
 print(gcd(20, 8))   # should be 4
+
+print(recursive_gcd(60, 96))  # should be 12
+print(recursive_gcd(20, 8)) # should be 4
